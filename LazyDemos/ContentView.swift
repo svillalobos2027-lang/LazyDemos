@@ -9,12 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            
-            RedAndCyanView()
+        ScrollView{
+            LazyVStack {
+                ForEach(0..<1000) { i in
+                    let _ = print("Dang \(i)")
+                    RedAndCyanView()
+                }
+            }
         }
         .padding()
-    }
+
+        }
 }
 struct RedAndCyanView: View {
     var body: some View {
